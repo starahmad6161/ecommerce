@@ -1,0 +1,32 @@
+
+footer
+{
+  background-color: #f7f7f7;
+  .text
+  {
+    color: #333;
+  }
+  a
+  {
+    color: #333;
+    &:hover
+    {
+      text-decoration: none;
+    }
+  }
+  .main-btn
+  {
+    font-size: .9rem;
+    border-radius: .3rem;
+  }
+  .social-icons
+  {
+    .icon
+    {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+  }
+}

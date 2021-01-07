@@ -1,0 +1,90 @@
+
+
+.gray-color
+{
+  color: #a0a0a0;
+}
+
+
+.top-nav
+{
+  .nav-bar
+  {
+    .nav-select-box
+    {
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      color: #c3c3c3;
+      transition: .2s;
+      &:hover
+      {
+        color: #a0a0a0;
+      }
+      option
+      {
+        color: #222;
+      }
+    }
+  }
+  .right-icons
+  {
+    .box
+    {
+      color: #c3c3c3;
+      transition: .2s;
+      cursor: pointer;
+      &:hover
+      {
+        color: #a0a0a0;
+      }
+    }
+  }
+}
+
+
+.center-nav
+{
+  background-color: #ef6c00;
+  .delete-icon
+  {
+    transition: .3s;
+    &:hover
+    {
+      color: #ef6c00;
+    }
+  }
+  .cart-list
+  {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      color: #222;
+      width: 200px;
+      z-index: 5;
+      cursor: auto;
+  }
+  .search-btn
+  {
+    background-color: #333;
+    border-color: #333;
+  }
+  .shopping-container
+  {
+    width: 40px;
+    cursor: pointer;
+    .num
+    {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #333;
+    }
+    .icon
+    {
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+
+::ng-deep .main-slider .owl-carousel .owl-item
+{
+  height: 550px;
+}
+.main-slider
+{
+  height: 550px;
+  .slider-container
+  {
+    background: center center no-repeat;
+    background-size: cover;
+  }
+  .item-title
+  {
+    color: #333;
+    font-size: 4rem;
+  }
+  .item-subtitle
+  {
+    color: #333;
+    font-size: 3rem;
+  }
+}
+
+.info-bar
+{
+  .icon
+  {
+    font-size: 2rem;
+  }
+}
+
+.products-industrial
+{
+  .nav-tabs
+  {
+    border-bottom: 1px solid #ddd;
+  }
+  .nav-link
+  {
+    color: #333;
+    font-size: .9rem;
+    &:hover,
+    &:focus
+    {
+      border-color: transparent;
+    }
+    &.active
+    {
+      border-color: transparent;
+      border-bottom: 2px solid #ef6c00;
+    }
+  }
+}
+
+::ng-deep .owl-carousel .owl-item
+{
+
+  border: 1px solid #ececec;
+}
+::ng-deep .owl-theme .owl-nav [class*=owl-]
+{
+  width: 50px;
+  height: 50px;
+  background-color: #ef6c00;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 1px 2px 8px #aaa;
+  &:hover
+  {
+    background-color: #ef6c00;
+  }
+}
+
+::ng-deep .owl-theme .owl-nav
+{
+  position: static;
+}
+::ng-deep .owl-carousel .owl-nav .owl-prev,
+::ng-deep .owl-carousel .owl-nav .owl-next
+{
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+}
+::ng-deep .owl-carousel .owl-nav .owl-prev:hover,
+::ng-deep .owl-carousel .owl-nav .owl-prev
+{
+  background-image: url("../../../assets/images/chevron-left-solid.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 12px;
+  left: 0px;
+}
+::ng-deep .owl-carousel .owl-nav .owl-next:hover,
+::ng-deep .owl-carousel .owl-nav .owl-next
+{
+  background-image: url("../../../assets/images/chevron-right-solid.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 12px;
+  right: 0px;
+}

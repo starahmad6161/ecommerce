@@ -1,0 +1,200 @@
+<div class="product-details py-5">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9">
+        <!--Top Content-->
+        <div class="row">
+          <!--Images-->
+          <div class="col-md-6">
+            <div class="images-container">
+              <!--Main Image-->
+              <div class="main-img img-thumbnail shadow-sm position-relative">
+                <img #mainImg class="w-100" [src]="productDetails?.mainImage" [alt]="productDetails?.name">
+                <fa-icon class="search-icon" [icon]="faSearchPlus" (click)="zoomIn()"></fa-icon>
+              </div>
+              <!--Image Slider-->
+              <div class="py-4">
+                <owl-carousel-o [options]="productsOptions">
+                  <ng-container *ngFor="let image of productDetails?.images; index as i">
+                    <ng-template carouselSlide>
+                      <img class="w-100" [src]="image" [alt]="productDetails?.name" (click)="changeImage(i)">
+                    </ng-template>
+                  </ng-container>
+                </owl-carousel-o>
+              </div>
+            </div>
+          </div>
+          <!--Description-->
+          <div class="col-md-6">
+            <h2 class="fw-bold title">{{ productDetails?.name }}</h2>
+            <div class="discount" *ngIf="productDetails?.hasDiscount">
+              <span class="d-inline-block h6 fw-bold me-2 gray-color text-decoration-line-through">{{ productDetails?.price | currency }}</span>
+              <span class="red-color d-inline-block h4">{{ productDetails?.discount}}%</span>
+            </div>
+            <div class="price fw-normal h3">
+              {{ productDetails?.price - (productDetails?.hasDiscount || productDetails?.discount == 0 ? (productDetails?.price * productDetails?.discount/100) : 0) | currency }}
+            </div>
+            <p class="description text-muted pt-2 pb-4">
+              {{ productDetails?.shortDescription }}
+            </p>
+            <div>
+              <div>
+                <span class="text-muted d-inline-block me-2">Avalibility:</span>
+                <span class="fw-500 red-color" *ngIf="outStock">Out of Stock</span>
+                <span class="fw-500" *ngIf="!outStock">In Stoke</span>
+              </div>
+              <div>
+                <span class="text-muted d-block me-2">Quantity:</span>
+                <div class="d-flex mt-3">
+                  <button class="inc-dec-btn p-3" (click)="dec()">-</button>
+                  <input class="form-control quantity text-center" type="text" (input)="checkQuantity($event.target.value)" [value]="quantity">
+                  <button class="inc-dec-btn p-3" (click)="inc()">+</button>
+                </div>
+                <div class="mt-4">
+                  <button class="main-btn fw-600 text-uppercase me-3" (click)="addToCart()">Add To Cart</button>
+                  <button class="main-btn fw-600 text-uppercase me-3">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Description And Reviews-->
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-link fw-500 active" id="nav-desc-tab" data-bs-toggle="tab" href="#nav-desc" role="tab" aria-controls="nav-desc" aria-selected="true">Description</a>
+            <a class="nav-link fw-500" id="nav-details-tab" data-bs-toggle="tab" href="#nav-details" role="tab" aria-controls="nav-details" aria-selected="false">Details</a>
+            <a class="nav-link fw-500" id="nav-reviews-tab" data-bs-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews</a>
+          </div>
+        </nav>
+        <div class="tab-content p-4 shadow-sm border border-top-0 mb-4" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
+            <p class="gray-color">
+              {{ productDetails?.description }}
+            </p>
+          </div>
+          <div class="tab-pane fade" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">
+            <p class="gray-color">
+              {{ productDetails?.details }}
+            </p>
+          </div>
+          <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
+            <!--Reviews-->
+            <div class="reviews">
+              <div class="card mb-3" *ngFor="let review of reviews">
+                <div class="d-flex align-items-center px-4">
+                  <div class="me-3">
+                    <img class="user-img rounded-circle overflow-hidden" [src]="review.user.userImg" [alt]="review.user.firstName">
+                  </div>
+                  <div >
+                    <div class="card-body">
+                      <h5 class="card-title">{{review.user.firstName + ' ' +  review.user.lastName}}</h5>
+                      <p class="card-text mb-0"><small class="text-muted">{{ review.reviewDate }}</small></p>
+                      <p class="card-text">{{ review.reviewText }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="border-bottom">Leave Your Review</h2>
+              <p class="text-muted">Your email address will not be published. Required fields are marked *</p>
+              <span>Your Rate:</span>
+              <ul class="prod-rate mt-2 list-unstyled d-flex flex-row-reverse justify-content-end">
+                <li class="mr-2 star" [class.active]="rateValue == 5" (click)="changeRate(5)" > <fa-icon class="star-icon gray-color pointer" [icon]="faStar"></fa-icon> </li>
+                <li class="mr-2 star" [class.active]="rateValue == 4" (click)="changeRate(4)" > <fa-icon class="star-icon gray-color pointer" [icon]="faStar"></fa-icon> </li>
+                <li class="mr-2 star" [class.active]="rateValue == 3" (click)="changeRate(3)" > <fa-icon class="star-icon gray-color pointer" [icon]="faStar"></fa-icon> </li>
+                <li class="mr-2 star" [class.active]="rateValue == 2" (click)="changeRate(2)" > <fa-icon class="star-icon gray-color pointer" [icon]="faStar"></fa-icon> </li>
+                <li class="mr-2 star" [class.active]="rateValue == 1" (click)="changeRate(1)" > <fa-icon class="star-icon gray-color pointer" [icon]="faStar"></fa-icon> </li>
+              </ul>
+              <!--Submit Review-->
+              <form [formGroup]="rateForm" #ngForm="ngForm" (ngSubmit)="rateFormSubmit()">
+                <div class="row">
+                  <div class="col-md-6 mb-3 position-relative">
+                    <input [class.is-invalid]="(userName.touched || ngForm.submitted) && userName.invalid" formControlName="userName" class="form-control" type="text" placeholder="Your Name (required) *">
+                    <div class="invalid-tooltip" *ngIf="(userName.touched || ngForm.submitted) && userName.errors?.required">
+                      This is required
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3 position-relative">
+                    <input [class.is-invalid]="(email.touched || ngForm.submitted) && email.invalid" formControlName="email" class="form-control" type="text" placeholder="Your Email (required) *">
+                    <div class="invalid-tooltip" *ngIf="(email.touched || ngForm.submitted) && email.errors?.required">
+                      This is required
+                    </div>
+                    <div class="invalid-tooltip" *ngIf="(email.touched || ngForm.submitted) && email.errors?.email">
+                      Invalid Email formate
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3 position-relative">
+                    <textarea [class.is-invalid]="(review.touched || ngForm.submitted) && review.invalid" formControlName="review" class="form-control" placeholder="Your Review (required) *"></textarea>
+                    <div class="invalid-tooltip" *ngIf="(review.touched || ngForm.submitted) && review.errors?.required">
+                      This is required
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3 position-relative">
+                    <button class="main-btn">Submit Review</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <h3 class="h4">Featured Products</h3>
+        <div class="line"></div>
+        <div class="products-slider">
+          <!--Featured Products-->
+          <owl-carousel-o [options]="featuredOptions">
+            <ng-container *ngFor="let item of featuredItems">
+              <ng-template carouselSlide>
+                <app-prodcard [prodDetails]="item"></app-prodcard>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+          <!--Latest Products-->
+        </div>
+      </div>
+      <div class="col-md-3">
+        <aside class="sidebar border px-3">
+          <!--Item #1-->
+          <div class="border-bottom py-2 d-flex align-items-center">
+            <fa-icon class="side-icon me-3" [icon]="faGift"></fa-icon>
+            <div>
+              <h3 class="title text-uppercase mb-1">BONUS PLUS</h3>
+              <p class="subtitle gray-color">
+                Get a bonus plus for buying more that three products
+              </p>
+            </div>
+          </div>
+          <!--Item #2-->
+          <div class="border-bottom py-2 d-flex align-items-center">
+            <fa-icon class="side-icon me-3" [icon]="faShippingFast"></fa-icon>
+            <div>
+              <h3 class="title text-uppercase mb-1">FREE SHIPPING</h3>
+              <p class="subtitle gray-color">
+                Free shipping on all orders over $99
+              </p>
+            </div>
+          </div>
+          <!--Item #3-->
+          <div class="border-bottom py-2 d-flex align-items-center">
+            <fa-icon class="side-icon me-3" [icon]="faCoins"></fa-icon>
+            <div>
+              <h3 class="title text-uppercase mb-1">MONEY BACK GUARANTEE</h3>
+              <p class="subtitle gray-color">
+                100% money back guarantee
+              </p>
+            </div>
+          </div>
+          <!--Item #4-->
+          <div class="py-2 d-flex align-items-center">
+            <fa-icon class="side-icon me-3" [icon]="faHistory"></fa-icon>
+            <div>
+              <h3 class="title text-uppercase mb-1">ONLINE SUPPORT 24/7</h3>
+              <p class="subtitle gray-color">
+                Call us: 02 3555 65454 55
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>

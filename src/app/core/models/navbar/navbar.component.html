@@ -1,0 +1,124 @@
+
+<div class="top-nav bg-dark navbar-dark py-4">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="order-2 order-md-1 col-md-6">
+        <div class="nav-bar mb-2 mb-lg-0 d-flex justify-content-center justify-content-md-start">
+          <div class="me-4 nav-item dropdown">
+              <select class="nav-select-box">
+                <option value="USD" selected>USD</option>
+                <option value="EUR">EUR</option>
+              </select>
+          </div>
+          <div class="nav-item dropdown">
+              <select class="nav-select-box" (change)="changeLang($event.target.value)">
+                <option value="en" selected>English</option>
+                <option value="ar">Arabic</option>
+              </select>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 order-md-2 col-md-6 mb-3 mb-md-0 right-icons d-flex justify-content-center justify-content-md-end">
+        <div class="box pointer me-3 text-uppercase" routerLink="/wishlist">
+          <fa-icon class="icon" [icon]="faHeart"></fa-icon>
+          {{ langObj?.wishlist}}
+        </div>
+        <div class="box pointer me-3 text-uppercase">
+          <fa-icon class="icon" [icon]="faSyncAlt"></fa-icon>
+          {{langObj?.compare}}
+        </div>
+        <div class="box pointer me-3">
+          <fa-icon class="icon" [icon]="faUser"></fa-icon>
+          {{langObj?.myAccount}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Center Navbar-->
+<div class="center-nav py-4 text-white">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="order-1 order-md-1 col-6 col-md-3 mb-3 mb-md-0">
+        <span class="h1" routerLink="/">ECommerce</span>
+      </div>
+      <div class="order-3 order-md-2 col-md-6 mb-3 mb-md-0">
+        <div class="input-group">
+          <input type="text" class="form-control" [placeholder]="langObj.typeToSearch + '...'">
+          <span class="search-btn text-white input-group-text px-4" id="basic-addon2">{{ langObj.search}}</span>
+        </div>
+      </div>
+      <div class="order-2 order-md-3 col-6 col-md-3 mb-3 mb-md-0">
+        <div class="shopping-container position-relative ms-auto me-3">
+          <div (click)="cartIsOpen = !cartIsOpen">
+            <span class="num rounded-pill d-flex align-items-center justify-content-center">{{ cartItems.length }}</span>
+            <fa-icon class="icon" [icon]="faShoppingCart"></fa-icon>
+          </div>
+          <div class="cart-list bg-white px-2 shadow-lg rounded" *ngIf="cartIsOpen">
+            <!--Cart Header-->
+            <div class="cart-header d-flex justify-content-between border-bottom py-3 h6 text-uppercase">
+              <span class="pointer" routerLink="/cart" (click)="cartIsOpen = false">check Card</span>
+              <span>{{cartItems.length}} items</span>
+            </div>
+            <!--Showing when cart is empty-->
+            <div class="pb-3 fw-500 px-2" *ngIf="cartItems.length == 0">
+              No Items Yet!
+            </div>
+
+            <div *ngIf="cartItems.length > 0">
+              <!--Items-->
+              <ul class="list-items p-0 px-2">
+                <li class="list-item mb-2 d-flex justify-content-between" *ngFor="let item of cartItems">
+                  <div class="me-1">
+                    <div class="h6">{{item.name}}</div>
+                    <div class=" gray-color">
+                      {{ item.quantity }} X
+                      {{ item.price - (item.hasDiscount || item.discount == 0 ? (item.price * item.discount/100) : 0) }}
+                    </div>
+                  </div>
+                  <!--Delete Icon-->
+                  <fa-icon class="delete-icon gray-color pointer" [icon]="faTrash" (click)="deleteCartItem(item.id)"></fa-icon>
+                </li>
+              </ul>
+              <div class="cart-footer mt-2 border-top d-flex py-3">
+                <small class="gray-color">Subtotal</small>
+                <span class="price ms-auto fw-500">{{ getCartTotalPrice() | currency }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item me-5">
+          <a class="nav-link fw-500 active" routerLink="/">{{langObj?.home}}</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link fw-500" routerLink="/products">{{langObj?.products}}</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link fw-500" href="#">{{langObj?.aboutUs}}</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link fw-500" href="#">{{langObj?.faq}}</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link fw-500" href="#">{{langObj?.contact}}</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link fw-500" href="#">{{langObj?.testimonials}}</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link fw-500" href="#">{{langObj?.checkout}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

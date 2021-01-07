@@ -1,0 +1,144 @@
+<!--Start main slider-->
+<div class="main-slider" dir="ltr">
+  <owl-carousel-o [options]="mainOptions">
+    <ng-template carouselSlide>
+      <div class="slider-container h-100 d-flex" style="background-image: url('../../../assets/images/banner1.jpg');">
+        <div class="container my-auto">
+          <h2 class="item-title">{{ langObj?.ourBestProducts }}</h2>
+          <p class="item-subtitle">{{ langObj?.specialSelection }}</p>
+          <a class="main-btn text-uppercase font-weigth-bold mt-2" routerLink="/products">
+            {{langObj?.shopNow}}
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="slider-container h-100 d-flex" style="background-image: url('../../../assets/images/banner2.jpg');">
+        <div class="container my-auto">
+          <h2 class="item-title">{{ langObj?.ourBestProducts }}</h2>
+          <p class="item-subtitle">{{ langObj?.specialSelection }}</p>
+          <a class="main-btn text-uppercase font-weigth-bold mt-2" routerLink="/products">
+            {{ langObj?.shopNow }}
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="slider-container h-100 d-flex" style="background-image: url('../../../assets/images/banner3.jpg');">
+        <div class="container my-auto">
+          <h2 class="item-title">{{ langObj?.ourBestProducts }}</h2>
+          <p class="item-subtitle">{{ langObj?.specialSelection }}</p>
+          <a class="main-btn text-uppercase font-weigth-bold mt-2" routerLink="/products">
+            {{ langObj?.shopNow }}
+          </a>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+<!--End main slider-->
+
+<!--Start info-bar-->
+<div class="container-fluid">
+  <div class="info-bar border mt-5 px-3 py-3">
+      <div class="row">
+        <!--Item #1-->
+        <div class="col-md-3 d-flex align-items-center border-end">
+          <fa-icon class="icon main-color mx-3" [icon]="faGift"></fa-icon>
+          <div class="content">
+            <h2 class="h6 fw-bold text-uppercase mb-0">{{ langObj?.bonusPlus }}</h2>
+            <p class="text-muted">
+              {{ langObj?.bonusPlus_sub }}
+            </p>
+          </div>
+        </div>
+        <!--Item #2-->
+        <div class="col-md-3 d-flex align-items-center border-end">
+          <fa-icon class="icon main-color mx-3" [icon]="faShippingFast"></fa-icon>
+          <div class="content">
+            <h2 class="h6 fw-bold text-uppercase mb-0">{{ langObj?.freeShipping }}</h2>
+            <p class="text-muted">
+              {{ langObj?.freeShipping_sub }}
+            </p>
+          </div>
+        </div>
+        <!--Item #2-->
+        <div class="col-md-3 d-flex align-items-center border-end">
+          <fa-icon class="icon main-color mx-3" [icon]="faCoins"></fa-icon>
+          <div class="content">
+            <h2 class="h6 fw-bold text-uppercase mb-0">{{ langObj?.moneyBack }}</h2>
+            <p class="text-muted">
+              {{ langObj?.moneyBack_sub }}
+            </p>
+          </div>
+        </div>
+        <!--Item #2-->
+        <div class="col-md-3 d-flex align-items-center">
+          <fa-icon class="icon main-color mx-3" [icon]="faHistory"></fa-icon>
+          <div class="content">
+            <h2 class="h6 fw-bold text-uppercase mb-0">{{ langObj?.onlineSupport }}</h2>
+            <p class="text-muted">
+              {{ langObj?.onlineSupport_sub }}
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!--End info-bar-->
+
+<!--Start products-industrial-->
+<div class="products-industrial py-5">
+  <div class="container-fluid">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <!--Tabs-->
+      <li class="nav-item" role="presentation">
+        <a class="nav-link text-uppercase fw-500 active" id="featured-tab" data-bs-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="true">{{ langObj?.featProd }}</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link text-uppercase fw-500" id="latest-tab" data-bs-toggle="tab" href="#latest" role="tab" aria-controls="latest" aria-selected="false">{{ langObj?.latestProd }}</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link text-uppercase fw-500" id="onsale-tab" data-bs-toggle="tab" href="#onsale" role="tab" aria-controls="onsale" aria-selected="false">{{ langObj?.onSaleProd }}</a>
+      </li>
+    </ul>
+
+    <!--Tab Content-->
+    <div class="tab-content p-3" id="myTabContent" dir="ltr">
+      <!--Featured Products-->
+      <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
+        <owl-carousel-o [options]="productsOptions">
+          <ng-container *ngFor="let item of featuredItems">
+            <ng-template carouselSlide>
+              <app-prodcard [prodDetails]="item"></app-prodcard>
+              <!--
+                <app-prodcard [prodID]="item.id" [prodName]="item.name" [prodCat]="item.category" [prodRate]="item.rate" [prodPrice]="item.price" [prodImg]="item.images[0]"></app-prodcard>
+              -->
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+      <!--Latest Products-->
+      <div class="tab-pane fade" [class]="{'show': tabState, 'active': tabState}" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+        <owl-carousel-o [options]="productsOptions">
+          <ng-container *ngFor="let item of latestItems">
+            <ng-template carouselSlide>
+              <app-prodcard [prodDetails]="item"></app-prodcard>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+      <!--On Sale Products-->
+      <div class="tab-pane fade" [class]="{'show': tabState, 'active': tabState}" id="onsale" role="tabpanel" aria-labelledby="onsale-tab">
+        <owl-carousel-o [options]="productsOptions">
+          <ng-container *ngFor="let item of onSaleItems">
+            <ng-template carouselSlide>
+              <app-prodcard [prodDetails]="item"></app-prodcard>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End products-industrial-->

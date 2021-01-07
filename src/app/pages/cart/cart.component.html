@@ -1,0 +1,58 @@
+
+<div class="cart-section py-5">
+  <div class="container-fluid">
+    <div class="table-responsive">
+      <table class="table text-center">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fw-bold text-center py-4" colspan="6" *ngIf="cartItems.length == 0">
+              No Items, <a class="text-decoration-underline" routerLink="/">Browse products</a>
+            </td>
+          </tr>
+          <tr *ngFor="let item of cartItems">
+            <td>
+              <a [routerLink]="['/products', item?.id]">
+                <img class="image" [src]="item?.mainImage" [alt]="item?.name">
+              </a>
+            </td>
+            <td>
+              <a [routerLink]="['/products', item?.id]">
+                {{ item?.name }}
+              </a>
+            </td>
+            <td>
+              {{ item?.price - (item?.hasDiscount || item?.discount == 0 ? (item?.price * item?.discount/100) : 0)  }}.00
+            </td>
+            <td>
+              <div class="d-flex">
+                  <input class="form-control quantity text-center mx-auto" disabled type="text" [value]="item?.quantity">
+              </div>
+            </td>
+            <td>
+              {{ (item?.price - (item?.hasDiscount || item?.discount == 0 ? (item?.price * item?.discount/100) : 0) ) * item?.quantity }}.00
+            </td>
+            <td>
+              <fa-icon class="pointer" [icon]="faTimes" (click)="deleteItem(item?.id)"></fa-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container-fluid d-flex mt-4">
+      <div class="ms-auto">
+        <span class="d-inline-block me-3 fw-500 mb-4">Grand total: {{ totalPrice | currency }}</span>
+        <button class="main-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>

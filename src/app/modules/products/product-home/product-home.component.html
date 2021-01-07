@@ -1,0 +1,51 @@
+<div class="container-fluid py-5">
+  <div class="row">
+    <div class="col-md-3">
+
+      <!--Categories-->
+      <div class="mb-3 border-bottom">
+        <h3 class="h6 mb-2">Categories</h3>
+        <select [formControl]="catSelect" class="form-select mb-3" (change)="categoryChanged($event.target.value)">
+          <option value="all" selected>Show All</option>
+          <option value="Headphones">Headphones</option>
+          <option value="Laptops">Laptops</option>
+        </select>
+      </div>
+      <!--Price-->
+      <div>
+        <h3 class="h6 mb-2">Price</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="gray-color mb-2">
+              From: <span class="fw-500">{{ minPrice | currency }}</span>
+            </div>
+            <input class="range" type="range" min="1" max="10000" value="1" (input)="changeMinRange($event.target.value)">
+          </div>
+          <div class="col-md-6">
+            <div class="gray-color mb-2">
+              To: <span class="fw-500">{{ maxPrice | currency }}</span>
+            </div>
+            <input class="range" type="range" min="1" max="10000" value="10000" (input)="changeMaxRange($event.target.value)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="py-4 d-flex justify-content-between">
+        <div>
+          <input class="form-control" type="text" (input)="querySearch($event.target.value)" placeholder="Search product">
+        </div>
+        <div class="d-flex">
+          <fa-icon class="list-icon me-3 pointer" (click)="itemPerRow = 1" [icon]="faThList"></fa-icon>
+          <fa-icon class="list-icon me-3 pointer" (click)="itemPerRow = 3" [icon]="faThLarge"></fa-icon>
+          <fa-icon class="list-icon me-3 pointer" (click)="itemPerRow = 4" [icon]="faTh"></fa-icon>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-4" [ngClass]="{'col-xl-3':itemPerRow == 4, 'col-xl-4':itemPerRow == 3, 'col-xl-12':itemPerRow == 1}" *ngFor="let item of items">
+          <app-prodcard [prodDetails]="item"></app-prodcard>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,235 @@
+
+
+.search-icon
+{
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  width: 3rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+
+.title
+{
+  color: #383838;
+}
+.gray-color
+{
+  color: #777;
+}
+.red-color
+{
+  color: #f33927;
+}
+.description
+{
+  border-bottom: 1px dashed #aaa;
+}
+
+.inc-dec-btn
+{
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  &:focus
+  {
+    outline: 0;
+  }
+}
+.quantity
+{
+  width: 70px;
+  border: none;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  &:focus
+  {
+    outline: none;
+    box-shadow: none;
+  }
+}
+.main-btn
+{
+  font-size: .9rem;
+}
+
+.sidebar
+{
+  .side-icon
+  {
+    font-size: 1.5rem;
+  }
+  .title
+  {
+    font-size: 1.3rem;
+  }
+  .subtitle
+  {
+    line-height: 1;
+    font-weight: 500;
+    font-size: .9rem;
+  }
+}
+.nav-tabs
+{
+  border-bottom: 1px solid #ddd;
+}
+.nav-link
+{
+  color: #333;
+  font-size: .9rem;
+  &:hover,
+  &:focus
+  {
+    border-color: transparent;
+  }
+  &.active
+  {
+    border-color: transparent;
+    border-bottom: 2px solid #ef6c00;
+  }
+}
+
+
+.reviews
+{
+  .user-img
+  {
+    width: 50px;
+    height: 50px;
+  }
+
+}
+.prod-rate .star
+{
+  direction: rtl;
+}
+.prod-rate .star:hover .star-icon,
+.prod-rate .star.active .star-icon,
+.prod-rate .star.active ~ .star .star-icon,
+.prod-rate .star:hover ~ .star .star-icon
+{
+  color: #ef6c00;
+}
+.invalid-tooltip
+{
+  background-color: rgba(220, 53, 69, 0.8);
+  position: static;
+  width: fit-content;
+}
+.line
+{
+  width: 3rem;
+  height: 2px;
+  background-color: #222;
+}
+
+
+
+
+::ng-deep .images-container .owl-carousel .owl-item
+{
+  box-shadow: 0 0.125rem .25rem #ddd!important;
+  margin-bottom: .2rem;
+}
+::ng-deep .images-container .owl-theme .owl-nav [class*=owl-]
+{
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 1px 2px 8px #aaa;
+  &:hover
+  {
+    background-color: #fff;
+  }
+}
+::ng-deep .images-container .owl-theme .owl-nav
+{
+  position: static;
+}
+::ng-deep .images-container .owl-carousel .owl-nav .owl-prev,
+::ng-deep .images-container .owl-carousel .owl-nav .owl-next
+{
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+}
+::ng-deep .images-container .owl-carousel .owl-nav .owl-prev:hover,
+::ng-deep .images-container .owl-carousel .owl-nav .owl-prev
+{
+  background-image: url("../../../../assets/images/chevron-left-solid-black.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 8px;
+  left: 0px;
+}
+::ng-deep .images-container .owl-carousel .owl-nav .owl-next:hover,
+::ng-deep .images-container .owl-carousel .owl-nav .owl-next
+{
+  background-image: url("../../../../assets/images/chevron-right-solid-black.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 8px;
+  right: 0px;
+}
+
+
+::ng-deep .products-slider .owl-carousel .owl-item
+{
+  border: 1px solid #ececec;
+}
+::ng-deep .products-slider .owl-theme .owl-nav [class*=owl-]
+{
+  width: 50px;
+  height: 50px;
+  background-color: #ef6c00;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 1px 2px 8px #aaa;
+  &:hover
+  {
+    background-color: #ef6c00;
+  }
+}
+::ng-deep .products-slider .owl-theme .owl-nav
+{
+  position: static;
+}
+::ng-deep .products-slider .owl-carousel .owl-nav .owl-prev,
+::ng-deep .products-slider .owl-carousel .owl-nav .owl-next
+{
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+}
+::ng-deep .products-slider .owl-carousel .owl-nav .owl-prev:hover,
+::ng-deep .products-slider .owl-carousel .owl-nav .owl-prev
+{
+  background-image: url("../../../../assets/images/chevron-left-solid.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 12px;
+  left: 0px;
+}
+::ng-deep .products-slider .owl-carousel .owl-nav .owl-next:hover,
+::ng-deep .products-slider .owl-carousel .owl-nav .owl-next
+{
+  background-image: url("../../../../assets/images/chevron-right-solid.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 12px;
+  right: 0px;
+}

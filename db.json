@@ -1,0 +1,150 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userImg": "assets/images/avatar-1.png",
+      "firstName": "Eslam",
+      "lastName": "Mo7n",
+      "age": 27,
+      "email": "ahmedessam291194@gmail.com",
+      "accessType": "admin"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "ONTEC E Headset",
+      "category":"Headphones",
+      "rate": 5,
+      "price": 266,
+      "hasDiscount": false,
+      "discount": 0,
+      "inStock": 5,
+      "sold": 200,
+      "mainImage": "assets/images/headphone1.png",
+      "images": ["assets/images/headphone1.png"],
+      "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "details": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, tortor gravida elementum tincidunt, justo lorem vestibulum ex, eget egestas arcu tellus in magna. Vivamus gravida, ipsum vel luctus luctus, nisi felis vestibulum est, nec interdum tellus leo quis tellus. Sed sit amet convallis enim, in laoreet orci. Donec et elit at nulla congue interdum sit amet varius erat. Nulla sit amet risus pellentesque, dignissim massa ut, dignissim arcu. Morbi dapibus ligula at faucibus tempus. Aenean vehicula, tortor gravida elementum tincidunt",
+      "userId": 2
+    },
+    {
+      "id": 2,
+      "name": "Headset Perro 2",
+      "category":"Headphones",
+      "rate": 5,
+      "price": 310,
+      "hasDiscount": true,
+      "discount": 50,
+      "inStock": 5,
+      "sold": 5000,
+      "mainImage": "assets/images/headphone3.png",
+      "images": ["assets/images/headphone3.png", "assets/images/headphone2.png","assets/images/headphone1.png", "assets/images/headphone4.png"],
+      "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "details": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, tortor gravida elementum tincidunt, justo lorem vestibulum ex, eget egestas arcu tellus in magna. Vivamus gravida, ipsum vel luctus luctus, nisi felis vestibulum est, nec interdum tellus leo quis tellus. Sed sit amet convallis enim, in laoreet orci. Donec et elit at nulla congue interdum sit amet varius erat. Nulla sit amet risus pellentesque, dignissim massa ut, dignissim arcu. Morbi dapibus ligula at faucibus tempus. Aenean vehicula, tortor gravida elementum tincidunt",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "name": "Dono Purple Wireless",
+      "category":"Headphones",
+      "rate": 5,
+      "price": 430,
+      "hasDiscount": false,
+      "discount": 0,
+      "inStock": 7,
+      "sold": 5000,
+      "mainImage": "assets/images/headphone4.png",
+      "images": ["assets/images/headphone4.png"],
+      "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "details": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, tortor gravida elementum tincidunt, justo lorem vestibulum ex, eget egestas arcu tellus in magna. Vivamus gravida, ipsum vel luctus luctus, nisi felis vestibulum est, nec interdum tellus leo quis tellus. Sed sit amet convallis enim, in laoreet orci. Donec et elit at nulla congue interdum sit amet varius erat. Nulla sit amet risus pellentesque, dignissim massa ut, dignissim arcu. Morbi dapibus ligula at faucibus tempus. Aenean vehicula, tortor gravida elementum tincidunt",
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "name": "Headset Perro 2",
+      "category":"Headphones",
+      "rate": 5,
+      "price": 200,
+      "hasDiscount": false,
+      "discount": 0,
+      "inStock": 5,
+      "sold": 7500,
+      "mainImage": "assets/images/headphone5.png",
+      "images": ["assets/images/headphone5.png"],
+      "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "details": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, tortor gravida elementum tincidunt, justo lorem vestibulum ex, eget egestas arcu tellus in magna. Vivamus gravida, ipsum vel luctus luctus, nisi felis vestibulum est, nec interdum tellus leo quis tellus. Sed sit amet convallis enim, in laoreet orci. Donec et elit at nulla congue interdum sit amet varius erat. Nulla sit amet risus pellentesque, dignissim massa ut, dignissim arcu. Morbi dapibus ligula at faucibus tempus. Aenean vehicula, tortor gravida elementum tincidunt",
+      "userId": 2
+    },
+    {
+      "id": 5,
+      "name": "Laptop Sens 7200L",
+      "category":"Laptops",
+      "rate": 5,
+      "price": 3540,
+      "hasDiscount": true,
+      "discount": 10,
+      "inStock": 10,
+      "sold": 7500,
+      "mainImage": "assets/images/laptop1.png",
+      "images": ["assets/images/laptop1.png"],
+      "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "details": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, tortor gravida elementum tincidunt, justo lorem vestibulum ex, eget egestas arcu tellus in magna. Vivamus gravida, ipsum vel luctus luctus, nisi felis vestibulum est, nec interdum tellus leo quis tellus. Sed sit amet convallis enim, in laoreet orci. Donec et elit at nulla congue interdum sit amet varius erat. Nulla sit amet risus pellentesque, dignissim massa ut, dignissim arcu. Morbi dapibus ligula at faucibus tempus. Aenean vehicula, tortor gravida elementum tincidunt",
+      "userId": 2
+    },
+    {
+      "id": 6,
+      "name": "Tablet Red 8500U 2TB",
+      "category":"Laptops",
+      "rate": 5,
+      "price": 4200,
+      "hasDiscount": false,
+      "discount": 0,
+      "inStock": 4,
+      "sold": 7500,
+      "mainImage": "assets/images/laptop2.png",
+      "images": ["assets/images/laptop2.png"],
+      "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "details": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, tortor gravida elementum tincidunt, justo lorem vestibulum ex, eget egestas arcu tellus in magna. Vivamus gravida, ipsum vel luctus luctus, nisi felis vestibulum est, nec interdum tellus leo quis tellus. Sed sit amet convallis enim, in laoreet orci. Donec et elit at nulla congue interdum sit amet varius erat. Nulla sit amet risus pellentesque, dignissim massa ut, dignissim arcu. Morbi dapibus ligula at faucibus tempus. Aenean vehicula, tortor gravida elementum tincidunt",
+      "userId": 2
+    },
+    {
+      "id": 7,
+      "name": "Elite Pro Book",
+      "category":"Laptops",
+      "rate": 5,
+      "price": 7500,
+      "hasDiscount": false,
+      "discount": 0,
+      "inStock": 3,
+      "sold": 7500,
+      "mainImage": "assets/images/laptop3.png",
+      "images": ["assets/images/laptop3.png"],
+      "shortDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "details": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, tortor gravida elementum tincidunt, justo lorem vestibulum ex, eget egestas arcu tellus in magna. Vivamus gravida, ipsum vel luctus luctus, nisi felis vestibulum est, nec interdum tellus leo quis tellus. Sed sit amet convallis enim, in laoreet orci. Donec et elit at nulla congue interdum sit amet varius erat. Nulla sit amet risus pellentesque, dignissim massa ut, dignissim arcu. Morbi dapibus ligula at faucibus tempus. Aenean vehicula, tortor gravida elementum tincidunt",
+      "userId": 2
+    }
+  ],
+  "reviews": [
+      {
+        "id": 1,
+        "reviewDate": "22 Mart, 2018 at 18:44",
+        "reviewText": "Integer id eros et mi fringilla imperdiet. In dictum turpis eget magna viverra condimentum. Ut malesuada interdum ultrices. Proin tristique ",
+        "userId": 1,
+        "productId": 1
+      },
+      {
+        "id": 3,
+        "reviewDate": "22 Mart, 2018 at 18:44",
+        "reviewText": "Integer id eros et mi fringilla imperdiet. In dictum turpis eget magna viverra condimentum. Ut malesuada interdum ultrices. Proin tristique ",
+        "userId": 1,
+        "productId": 2
+      }
+  ]
+}
