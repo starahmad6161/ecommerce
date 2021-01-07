@@ -959,7 +959,7 @@ class ProductsService {
         this.http = http;
         this.cartItems = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](null);
         this.wishlistItems = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](null);
-        this.server = "http://my-json-server.typicode.com/starahmad6161/ecommerceJson/";
+        this.server = "https://my-json-server.typicode.com/starahmad6161/ecommerce/";
         this.loadAll();
     }
     loadAll() {
